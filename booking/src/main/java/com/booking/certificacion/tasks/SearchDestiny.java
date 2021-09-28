@@ -24,6 +24,7 @@ public class SearchDestiny implements Task {
         actor.wasAbleTo(
                 WaitUntil.the(SEARCH_ATTRACTION_FIELD, isEnabled()),
                 Enter.theValue(destiny).into(SEARCH_ATTRACTION_FIELD),
+                WaitUntil.the(SEARCH_BUTTON, isEnabled()),
                 Click.on(SEARCH_BUTTON)
         );
     }
