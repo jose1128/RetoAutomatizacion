@@ -7,7 +7,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.booking.certificacion.userinterfaces.ResultSearchDestinationPage.RESULTS_TABLE;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SelectPriceFilter implements Task {
@@ -21,8 +20,8 @@ public class SelectPriceFilter implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(filter),
-                WaitUntil.the(RESULTS_TABLE, isVisible())
+                WaitUntil.the(filter, isVisible()),
+                Click.on(filter)
         );
     }
 

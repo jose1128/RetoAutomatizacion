@@ -9,11 +9,10 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.booking.certificacion.userinterfaces.AttractionDetailsPage.*;
-import static com.booking.certificacion.userinterfaces.AttractionsPage.ATTRACTION_RESULT;
-import static com.booking.certificacion.userinterfaces.AttractionsPage.SEARCH_ATTRACTION_FIELD;
+import static com.booking.certificacion.userinterfaces.AttractionDetailsPage.NEXT_RESERVE_ATTRACTION_BUTTON;
+import static com.booking.certificacion.userinterfaces.AttractionDetailsPage.SELECT_ATTRACTION;
+import static com.booking.certificacion.userinterfaces.AttractionsPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static org.openqa.selenium.Keys.ENTER;
 
 public class ReserveAttraction implements Task {
 
@@ -27,7 +26,7 @@ public class ReserveAttraction implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(attractionData.getDestiny()).into(SEARCH_ATTRACTION_FIELD),
-                Enter.keyValues(ENTER).into(SEARCH_ATTRACTION_FIELD),
+                Click.on(SEARCH_BUTTON),
                 WaitUntil.the(ATTRACTION_RESULT.of(attractionData.getAttraction()), isVisible()),
                 Click.on(ATTRACTION_RESULT.of(attractionData.getAttraction())),
                 WaitUntil.the(SELECT_ATTRACTION, isVisible()),

@@ -6,7 +6,6 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.booking.certificacion.userinterfaces.ResultSearchDestinationPage.RESULTS_TABLE;
 import static com.booking.certificacion.userinterfaces.ResultSearchDestinationPage.STARS_FILTER;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -21,8 +20,8 @@ public class SelectStarsFilter implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(STARS_FILTER.of(filter)),
-                WaitUntil.the(RESULTS_TABLE, isVisible())
+                WaitUntil.the(STARS_FILTER.of(filter), isVisible()),
+                Click.on(STARS_FILTER.of(filter))
         );
     }
 
