@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Register on the travelocity website" skipped="0" tests="2" time="38.75" timestamp="2021-09-26 03:45:57"><testcase name="Successful Registration"/><testcase name="Incorrect registration with an email already registered"/></testsuite>
